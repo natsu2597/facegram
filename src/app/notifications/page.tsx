@@ -38,7 +38,7 @@ function NotificationsPage() {
         const data = await getNotifications();
         setNotifications(data);
 
-        const unreadIds = data.filter((n) => !n.read).map((n) => n.id);
+        const unreadIds = data.filter((n : any) => !n.read).map((n : any) => n.id);
         if (unreadIds.length > 0) await markReadNotifications(unreadIds);
       } catch (error) {
         toast.error("Failed to fetch notifications");
