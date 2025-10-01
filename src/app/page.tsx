@@ -4,10 +4,11 @@ import { currentUser } from "@clerk/nextjs/server";
 import PostCard from "@/components/PostCard";
 import { getPosts } from "@/actions/post.action";
 import { getDbUserId } from "@/actions/user.action";
+import { Post } from "@prisma/client";
 
 export default async function Home() {
   const user = await currentUser();
-  const post = await getPosts();
+  const posts : PostWithRelations[] = await getPosts();
   const dbUserId = await getDbUserId();
   
 
@@ -16,7 +17,7 @@ export default async function Home() {
         <div className="lg:col-span-6">
           {user ? <CreatePost /> : null}
           <div className="space-y-6">
-            {post.map((post) => (
+            {posts.map((post) => (
               <PostCard key={post.id} post={post} dbUserId={dbUserId}/>
             ))}
           </div>

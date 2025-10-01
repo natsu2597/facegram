@@ -5,6 +5,8 @@ import { getDbUserId } from "./user.action";
 import { revalidatePath } from "next/cache";
 import { Prisma } from "@prisma/client";
 
+
+
 export async function createPost(content : string, image: string){
     try{
         const userId = await getDbUserId();
@@ -26,7 +28,7 @@ export async function createPost(content : string, image: string){
     }
 }
 
-export async function getPosts()
+export async function getPosts() : Promise<PostWithRelations[]>
 {
     try{
         const posts = await prisma.post.findMany({
