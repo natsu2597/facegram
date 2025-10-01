@@ -35,7 +35,7 @@ function NotificationsPage() {
     useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const data : Notification[] = await getNotifications();
+        const data = await getNotifications();
         setNotifications(data);
 
         const unreadIds = data.filter((n) => !n.read).map((n) => n.id);
