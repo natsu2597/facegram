@@ -12,11 +12,17 @@ import { Avatar,AvatarImage } from './ui/avatar';
 import { Button } from './ui/button';
 import { HeartIcon, LogInIcon, MessageCircleIcon, SendIcon } from 'lucide-react';
 import { Textarea } from './ui/textarea';
+import { PostWithRelations } from '@/types';
 
 type Posts = Awaited<ReturnType<typeof getPosts>>;
 type Post = Posts[number]
 
-function PostCard({post,dbUserId} : {post : Post; dbUserId : string | null}) {
+type PostCardProps ={
+    post : PostWithRelations;
+    dbUserId : string | null
+}
+
+function PostCard({post,dbUserId} : PostCardProps) {
     
 
     const { user } =  useUser();

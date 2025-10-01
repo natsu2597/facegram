@@ -1,4 +1,4 @@
-type PostWithRelations = {
+export type PostWithRelations = {
   id: string;
   authorId: string;
   content: string | null;

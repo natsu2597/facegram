@@ -4,6 +4,8 @@ import prisma from "@/lib/prisma";
 import { getDbUserId } from "./user.action";
 import { revalidatePath } from "next/cache";
 import { Prisma } from "@prisma/client";
+import { PostWithRelations } from "@/types";
+
 
 
 
