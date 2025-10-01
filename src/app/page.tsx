@@ -4,7 +4,6 @@ import { currentUser } from "@clerk/nextjs/server";
 import PostCard from "@/components/PostCard";
 import { getPosts } from "@/actions/post.action";
 import { getDbUserId } from "@/actions/user.action";
-import { Post } from "@prisma/client";
 
 export default async function Home() {
   const user = await currentUser();
