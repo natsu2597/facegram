@@ -36,7 +36,7 @@ function PostCard({post,dbUserId} : {post: Post, dbUserId : string | null}) {
         try{
             setIsLiking(true);
             setHasLiked((prev: any) => !prev);
-            setOptimisticLikes(prev => prev + (hasLiked ? -1 : 1));
+            setOptimisticLikes((prev : any) => prev + (hasLiked ? -1 : 1));
             await toggleLike(post.id)
             
             
