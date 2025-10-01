@@ -17,12 +17,9 @@ import { PostWithRelations } from '@/types';
 type Posts = Awaited<ReturnType<typeof getPosts>>;
 type Post = Posts[number]
 
-type PostCardProps ={
-    post : PostWithRelations;
-    dbUserId : string | null
-}
 
-function PostCard({post,dbUserId} : PostCardProps) {
+
+function PostCard({post,dbUserId} : {post: Post, dbUserId : string | null}) {
     
 
     const { user } =  useUser();

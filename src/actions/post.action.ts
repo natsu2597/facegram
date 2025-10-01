@@ -4,7 +4,7 @@ import prisma from "@/lib/prisma";
 import { getDbUserId } from "./user.action";
 import { revalidatePath } from "next/cache";
 import { Prisma } from "@prisma/client";
-import { PostWithRelations } from "@/types";
+
 
 
 
@@ -30,7 +30,7 @@ export async function createPost(content : string, image: string){
     }
 }
 
-export async function getPosts() : Promise<PostWithRelations[]>
+export async function getPosts()
 {
     try{
         const posts = await prisma.post.findMany({
