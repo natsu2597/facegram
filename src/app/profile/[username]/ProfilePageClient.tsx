@@ -181,7 +181,7 @@ function ProfilePageClient({isUserFollowing: isCurrentUserFollowing,user,posts,l
                    <TabsContent value="likes" className="mt-6">
             <div className="space-y-6">
               {posts.length > 0 ? (
-                posts.map((post) => <PostCard key={post.id} post={post} dbUserId={user.id} />)
+                posts.map((post : any) => <PostCard key={post.id} post={post} dbUserId={user.id} />)
               ) : (
                 <div className="text-center py-8 text-muted-foreground">No liked posts to show</div>
               )}
