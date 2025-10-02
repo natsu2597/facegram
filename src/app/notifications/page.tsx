@@ -1,4 +1,4 @@
-  "use client";
+"use client";
 
 
 import { getNotifications, markReadNotifications } from '@/actions/notifications.action';
@@ -58,7 +58,7 @@ function NotificationsPage() {
             <div className='flex items-center justify-between'>
                 <CardTitle>Notifications</CardTitle>
                 <span className='text-sm text-muted-foreground'>
-                  {notifications.filter((n) => !n.read).length} unread  
+                  {notifications.filter((n : any) => !n.read).length} unread  
                 </span>
             </div>
         </CardHeader>
@@ -69,7 +69,7 @@ function NotificationsPage() {
                     No Notifications yet
                   </div>
                 ) : (
-                  notifications.map((notification) => (
+                  notifications.map((notification: any) => (
                     <div key={notification.id}
                     className={`flex items-start gap-4 p-4 border-b hover:bg-muted/25 transition-colors ${!notification.read ? 'bg-muted/55' : ''}`}
                     >
