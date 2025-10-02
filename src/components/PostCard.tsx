@@ -43,7 +43,7 @@ function PostCard({post,dbUserId} : {post: Post, dbUserId : string | null}) {
         }
         catch(error){
             setOptimisticLikes(post._count.likes)
-            setHasLiked(post.likes.some(like => like.userId === dbUserId));
+            setHasLiked(post.likes.some((like :any) => like.userId === dbUserId));
 
         }
         finally{
